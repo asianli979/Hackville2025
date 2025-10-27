@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <body>
     <div id="login-page" class="page">
       <div class="login-container">
@@ -16,7 +18,7 @@
             <div class="form-group">
               <label for="FirstName">First Name</label>
               <input
-                type="FirstName"
+                type="text"
                 id="FirstName"
                 placeholder="Enter your first name"
                 required
@@ -26,7 +28,7 @@
             <div class="form-group">
                 <label for="LastName">Last Name</label>
                 <input
-                  type="LastName"
+                  type="text"
                   id="LastName"
                   placeholder="Enter your last name"
                   required
@@ -36,8 +38,8 @@
             <div class="form-group">
                 <label for="number">number</label>
                 <input
-                  type="number"
-                  id="number"
+                  type="tel"
+                  id="phoneNumber"
                   placeholder="enter your number"
                   required
                 />
@@ -71,3 +73,26 @@
         </div>
       </div>
     </div>
+  </body>
+  <script>
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      function handlelogin_password(){
+        const user_email =document.getElementById("email").value;
+        const user_password = document.getElementById("password").value;
+        const firstName = document.getElementById("FirstName").value;
+        const lastName = document.getElementById("LastName").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+          if(user_email === "pbd@gmail.com" && user_password === "123score$579" && firstName === "Kyle" && lastName === "Lowry" && phoneNumber == "(416)-635-9125"){
+              window.location.href = "login.html"
+          }
+          else{
+            alert("Wrong username or password. Try again.");
+            window.location.href = "register.html"
+          }
+        }
+        handlelogin_password();
+      });
+    </script>
+  </html>
