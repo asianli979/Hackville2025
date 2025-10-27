@@ -122,6 +122,8 @@ def accept_cookies():
     elif choice == 'deny':
         session['cookie_accepted'] = False  # Store cookie denial in session
     return redirect(url_for('chat_page'))  # Redirect back to the main chat page
+USER_ID = "pbd@gmail.com"
+USER_PASSWORD = "123score$579"
 
 @app.route('/api/generate_workout', methods=['POST'])
 def generate_workout():
